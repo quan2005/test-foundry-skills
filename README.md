@@ -2,6 +2,8 @@
 
 AI-native automation testing skillset that turns requirements into review-ready test cases, API tests, UI tests, and load tests.
 
+![TestFoundry Skills hero](./assets/testfoundry-skills-hero.png)
+
 ## 项目简介
 
 `TestFoundry Skills` 是一组面向 AI Agent 的自动化测试 Creator Skills，用来把需求文档逐步转换为评审可用、可追踪、可继续自动化生成的测试资产。
