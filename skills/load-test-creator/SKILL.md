@@ -31,14 +31,14 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 
 ## Output Contract
 
-默认输出到 `output/automation-factory/{yyMMdd}_{requirement_slug}/load_tests/`。
+默认输出到 `./test/{yyMMdd}_{requirement_slug}/load_tests/`。
 
 - `yyMMdd`
   使用当前本地日期，例如 `260309`
 - `requirement_slug`
   优先复用 `test-case-creator` 已使用的需求标识；没有现成标识时，从需求标题、版本短名或用户给定标识生成小写 snake_case
 - 示例
-  `output/automation-factory/260309_sandbox_v2_1/load_tests/`
+  `./test/260309_sandbox_v2_1/load_tests/`
 
 - `k6-plan.md`
   说明压测目标、场景选择、数据准备、阈值建议、缺口项。

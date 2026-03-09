@@ -110,7 +110,7 @@ skills/<skill-name>/
 默认输出路径：
 
 ```text
-output/automation-factory/{yyMMdd}_{requirement_slug}/
+./test/{yyMMdd}_{requirement_slug}/
 ├── test_cases/
 ├── api_tests/
 ├── ui_tests/
