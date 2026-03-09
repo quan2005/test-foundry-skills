@@ -2,7 +2,7 @@
 
 AI-native automation testing skillset that turns requirements into review-ready test cases, API tests, UI tests, and load tests.
 
-![TestFoundry Skills hero](./assets/testfoundry-skills-hero.png)
+![TestFoundry Skills hero](./assets/testfoundry-skills-hero-consulting.png)
 
 ## 项目简介
 
