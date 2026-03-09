@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Test Creator"
+  short_description: "Create Midscene UI cases and visual reviews"
+  default_prompt: "Use $ui-test-creator to generate Midscene functional cases and visual layout review notes from these reviewed test cases and website pages."

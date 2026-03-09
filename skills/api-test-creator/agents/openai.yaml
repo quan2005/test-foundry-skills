@@ -1,0 +1,4 @@
+interface:
+  display_name: "API Test Creator"
+  short_description: "Generate Hurl and Schemathesis API assets"
+  default_prompt: "Use $api-test-creator to generate Hurl regression assets and a Schemathesis boundary plan from these reviewed test cases and swagger.json."
