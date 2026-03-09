@@ -7,6 +7,12 @@ description: Generate API acceptance assets from reviewed test cases and OpenAPI
 
 将已评审通过的测试用例转换成 API 验收测试资产。默认输出 Hurl 主回归脚本和 Schemathesis 边界测试计划，不负责 UI 验收，也不替代负载测试。
 
+## Dependency
+
+- 强依赖官方的 [`playwright-interactive`](https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive) 来读取登录后的需求文档、Swagger 页面和内网补充说明。
+- 在 Codex 中优先安装到 `~/.codex/skills/playwright-interactive`；在 Claude Code 中安装到 `~/.claude/skills/playwright-interactive` 或 `.claude/skills/playwright-interactive`。
+- 如果关键接口说明位于登录态页面而运行环境没有 `playwright-interactive`，不要用外部搜索代替真实文档，直接提示先安装依赖。
+
 ## Workflow
 
 1. 确认测试用例评审已通过；如果未通过，先返回缺口，不生成脚本。

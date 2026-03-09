@@ -7,6 +7,12 @@ description: Create Midscene-based UI automation assets from reviewed test cases
 
 将已评审通过的测试用例转换成 Midscene 可消费的 UI 自动化资产。默认输出双层结果：功能路径用例，以及更像人工评审的视觉风格与布局验收清单。
 
+## Dependency
+
+- 强依赖官方的 [`playwright-interactive`](https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive) 来观察真实页面、复用登录态并读取内部站点。
+- 在 Codex 中优先安装到 `~/.codex/skills/playwright-interactive`；在 Claude Code 中安装到 `~/.claude/skills/playwright-interactive` 或 `.claude/skills/playwright-interactive`。
+- 如果运行环境没有 `playwright-interactive`，不要把 UI 测试生成退化成纯静态猜测；遇到真实页面和登录态依赖时应先提示安装依赖。
+
 ## Workflow
 
 1. 确认测试用例评审已通过；如果未通过，先返回缺口，不生成 UI 资产。

@@ -7,6 +7,12 @@ description: Design review-ready test case overview maps, module maps, and matri
 
 将需求文档转换成评审可用的测试用例资产。默认先完成需求理解、覆盖拆解、问题标注和评审材料整理，不要直接生成 API、UI 或压测脚本。
 
+## Dependency
+
+- 强依赖官方的 [`playwright-interactive`](https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive) 来读取登录后页面、内部文档和真实浏览器上下文。
+- 在 Codex 中优先安装到 `~/.codex/skills/playwright-interactive`；在 Claude Code 中安装到 `~/.claude/skills/playwright-interactive` 或 `.claude/skills/playwright-interactive`。
+- 如果任务涉及飞书、Confluence、内部 wiki 或任何需要登录的需求来源，而运行环境没有 `playwright-interactive`，不要退化到外部搜索，直接提示先安装依赖。
+
 ## Workflow
 
 1. 阅读需求文档，先建立功能、角色、状态、异常、边界四类覆盖视角。

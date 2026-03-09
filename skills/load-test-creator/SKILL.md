@@ -7,6 +7,12 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 
 将已评审通过的测试用例转换成 k6 压测资产。默认输出压测方案和脚本骨架，重点补齐负载模型、阈值和性能目标缺口，不负责接口功能正确性本身。
 
+## Dependency
+
+- 强依赖官方的 [`playwright-interactive`](https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive) 来读取登录后的性能目标文档、内网说明页和补充约束。
+- 在 Codex 中优先安装到 `~/.codex/skills/playwright-interactive`；在 Claude Code 中安装到 `~/.claude/skills/playwright-interactive` 或 `.claude/skills/playwright-interactive`。
+- 如果性能目标和容量约束位于登录态页面而运行环境没有 `playwright-interactive`，不要用公开搜索或经验默认值替代真实来源，直接提示先安装依赖。
+
 ## Workflow
 
 1. 确认测试用例评审已通过；如果未通过，先返回缺口，不生成压测资产。
