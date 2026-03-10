@@ -49,34 +49,55 @@ git -C /tmp/openai-skills sparse-checkout set skills/.curated/playwright-interac
 安装到不同环境时，复制到对应目录：
 
 ```bash
-# Codex
-mkdir -p ~/.codex/skills
-cp -R /tmp/openai-skills/skills/.curated/playwright-interactive ~/.codex/skills/
+# 共享源目录
+mkdir -p ~/.agents/skills
+cp -R /tmp/openai-skills/skills/.curated/playwright-interactive ~/.agents/skills/
 
-# Claude Code（个人级）
-mkdir -p ~/.claude/skills
-cp -R /tmp/openai-skills/skills/.curated/playwright-interactive ~/.claude/skills/
+# Codex / Claude Code 入口目录各自链接到共享目录
+ln -s ~/.agents/skills/playwright-interactive ~/.codex/skills/playwright-interactive
+ln -s ~/.agents/skills/playwright-interactive ~/.claude/skills/playwright-interactive
 ```
 
 ### 2. 安装 TestFoundry Skills
 
 ```bash
 git clone https://github.com/quan2005/test-foundry-skills.git
+cd test-foundry-skills
+./scripts/bootstrap-shared-agent-capabilities.sh
 ```
 
-复制到你使用的 skills 目录：
+这个启动脚本会做三件事：
+
+- 把仓库里的 `skills/*` 链接到 `~/.agents/skills`
+- 再从 `~/.agents/skills` 链接到 `~/.claude/skills` 和 `~/.codex/skills`
+- 把仓库根目录的 `.mcp.json` 同步到 `~/.codex/config.toml`
+
+如果你只想单独执行其中一步：
 
 ```bash
-# Codex
-cp -R test-foundry-skills/skills/* ~/.codex/skills/
+# 只处理 skills 共享链接
+./scripts/link-shared-skills.sh
 
-# Claude Code（个人级）
-cp -R test-foundry-skills/skills/* ~/.claude/skills/
+# 只同步 Codex MCP
+python3 ./scripts/sync-codex-mcp.py --mcp-file ./.mcp.json
 
-# Claude Code（项目级）
-mkdir -p .claude/skills
-cp -R test-foundry-skills/skills/* .claude/skills/
+# 把 ~/.claude/skills 和 ~/.codex/skills 里现有的 SKILL.md 目录迁到 ~/.agents/skills
+python3 ./scripts/consolidate-home-skills.py
 ```
+
+### 3. `.mcp.json` 作为共享源
+
+仓库根目录的 `.mcp.json` 是 Claude Code 和 Codex 共用的 MCP 源配置：
+
+- Claude Code 直接读取项目级 `.mcp.json`
+- Codex 当前不直接消费 `.mcp.json`，因此通过 `scripts/sync-codex-mcp.py` 映射到 `~/.codex/config.toml`
+
+目前同步脚本支持这两个公共子集：
+
+- `stdio`: `command` / `args` / `env` / `cwd`
+- `http`: `url`
+
+为避免误伤本地私有配置，脚本只管理 `.mcp.json` 中出现的 server 名称，其它 `Codex` MCP 配置保持不动。
 
 ## 兼容性
 
@@ -94,7 +115,8 @@ skills/<skill-name>/
 
 - `SKILL.md` 是核心，兼容 Claude Code 一类基于 Agent Skills 目录约定的运行方式
 - `agents/openai.yaml` 是 Codex 的附加 UI 元数据，不影响 Claude Code 使用
-- 本仓库用 `skills/` 作为分发根目录，便于复制到 `~/.codex/skills`、`~/.claude/skills` 或 `.claude/skills`
+- 本仓库用 `skills/` 作为分发根目录，推荐先链接到 `~/.agents/skills`，再由 `~/.claude/skills` 和 `~/.codex/skills` 复用
+- MCP 推荐用仓库级 `.mcp.json` 做共享源，再同步到 Codex 的 `config.toml`
 
 ## 怎么用
 
@@ -124,6 +146,9 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/t
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/api-test-creator
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/ui-test-creator
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/performance-test-creator
+
+# 检查共享 MCP 到 Codex 的映射结果
+codex mcp list
 ```
 
 ## 仓库不包含什么
