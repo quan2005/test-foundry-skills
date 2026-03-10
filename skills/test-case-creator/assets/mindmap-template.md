@@ -46,10 +46,10 @@ flowchart LR
 
 ## 测试矩阵
 
-- 详见 `test-matrix.md`
+- 测试矩阵已内嵌在各模块文档中，详见模块图索引中的对应文件。
 
 ## 评审结论
 
 - 结论：
-- 是否允许进入 API/UI/Load 生成：
+- 是否允许进入 API/UI/Performance 生成：
 - 备注：

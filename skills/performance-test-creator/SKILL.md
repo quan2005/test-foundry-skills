@@ -1,11 +1,11 @@
 ---
-name: load-test-creator
+name: performance-test-creator
 description: Create k6 performance test plans and starter scenarios from reviewed test cases, interface details, and explicit performance targets. Use when Codex needs load, stress, spike, and soak assets, threshold recommendations, or performance gap analysis before running API capacity tests.
 ---
 
-# Load Test Creator
+# Performance Test Creator
 
-将已评审通过的测试用例转换成 k6 压测资产。默认输出压测方案和脚本骨架，重点补齐负载模型、阈值和性能目标缺口，不负责接口功能正确性本身。
+将已评审通过的测试用例转换成 k6 性能测试资产。默认输出性能测试方案和脚本骨架，重点补齐负载模型、阈值和性能目标缺口，不负责接口功能正确性本身。
 
 ## Dependency
 
@@ -15,9 +15,9 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 
 ## Workflow
 
-1. 确认测试用例评审已通过；如果未通过，先返回缺口，不生成压测资产。
+1. 确认测试用例评审已通过；如果未通过，先返回缺口，不生成性能测试资产。
 2. 阅读需求文档、测试用例、接口信息和性能目标。
-3. 从已确认业务流中选择适合作为压测入口的路径。
+3. 从已确认业务流中选择适合作为性能测试入口的路径。
 4. 将业务流转换成 k6 场景骨架。
 5. 为不同目标分别设计 load / stress / spike / soak。
 6. 输出阈值、阶段、并发建议和缺口清单。
@@ -31,23 +31,23 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 
 ## Output Contract
 
-默认输出到 `./test/{yyMMdd}_{requirement_slug}/load_tests/`。
+默认输出到 `./test/{yyMMdd}_{requirement_slug}/performance_tests/`。
 
 - `yyMMdd`
   使用当前本地日期，例如 `260309`
 - `requirement_slug`
   优先复用 `test-case-creator` 已使用的需求标识；没有现成标识时，从需求标题、版本短名或用户给定标识生成小写 snake_case
 - 示例
-  `./test/260309_sandbox_v2_1/load_tests/`
+  `./test/260309_sandbox_v2_1/performance_tests/`
 
 - `k6-plan.md`
-  说明压测目标、场景选择、数据准备、阈值建议、缺口项。
+  说明性能测试目标、场景选择、数据准备、阈值建议、缺口项。
 - `k6-scenarios.js`
   提供基础 k6 场景骨架，便于继续细化。
 
-如果同一需求已经存在 `test_cases/`，默认写入同级 `load_tests/`，不要另起一个新的需求目录。
+如果同一需求已经存在 `test_cases/`，默认写入同级 `performance_tests/`，不要另起一个新的需求目录。
 
-## Load Model Rules
+## Performance Model Rules
 
 - `load`
   验证常规负载下是否稳定
@@ -58,12 +58,12 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 - `soak`
   验证长时间运行的稳定性和资源泄漏风险
 
-不要把这些模式混成一个模糊的“压测脚本”。
+不要把这些模式混成一个模糊的”性能测试脚本”。
 
 ## Relationship With Hurl
 
-- Hurl 业务流可以作为压测输入来源。
-- 不能直接把 Hurl 当成压测脚本。
+- Hurl 业务流可以作为性能测试输入来源。
+- 不能直接把 Hurl 当成性能测试脚本。
 - 必须补充：
   - 并发模型
   - stages
@@ -87,5 +87,5 @@ description: Create k6 performance test plans and starter scenarios from reviewe
 
 - 读取 `references/k6-scenario-patterns.md`，统一 k6 场景设计方式。
 - 读取 `references/perf-targets-checklist.md`，判断性能目标是否足够执行。
-- 读取 `references/hurl-to-k6-mapping.md`，将业务回归流映射到压测入口。
+- 读取 `references/hurl-to-k6-mapping.md`，将业务回归流映射到性能测试入口。
 - 使用 `assets/k6-plan-template.md` 和 `assets/k6-scenario-template.js` 作为默认骨架。

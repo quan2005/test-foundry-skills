@@ -89,7 +89,7 @@ description: Create Midscene-based UI automation assets from reviewed test cases
 
 ## Boundaries
 
-- UI 层不负责接口边界和压测。
+- UI 层不负责接口边界和性能测试。
 - 如果问题明显属于接口行为或数据规则，记录为依赖问题，不把它伪装成 UI 视觉问题。
 - 如果页面现状与需求明显不一致，要在视觉评审和功能用例里同时记录差异。
 

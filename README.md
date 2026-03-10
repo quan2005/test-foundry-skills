@@ -1,6 +1,6 @@
 # TestFoundry Skills
 
-AI-native automation testing skillset that turns requirements into review-ready test cases, API tests, UI tests, and load tests.
+AI-native automation testing skillset that turns requirements into review-ready test cases, API tests, UI tests, and performance tests.
 
 ![TestFoundry Skills hero](./assets/ai-testing-factory-consulting-style-v2.png)
 
@@ -9,12 +9,12 @@ AI-native automation testing skillset that turns requirements into review-ready 
 一个面向 AI Agent 的测试技能集，包含 4 个 Creator Skills：
 
 - `test-case-creator`
-  从需求文档生成测试总览图、模块图、测试矩阵和评审问题清单
+  从需求文档生成测试总览图、模块图（含测试矩阵）和评审问题清单
 - `api-test-creator`
   从已评审测试用例和 `swagger.json` 生成 `Hurl` + `Schemathesis` 资产
 - `ui-test-creator`
   从已评审测试用例和网站 URL 生成 `Midscene` 功能用例和视觉评审清单
-- `load-test-creator`
+- `performance-test-creator`
   从已评审测试用例和性能目标生成 `k6` 方案与场景骨架
 
 ## 先装这个依赖
@@ -101,11 +101,11 @@ skills/<skill-name>/
 推荐顺序：
 
 1. `test-case-creator`
-   先把需求文档转成测试总览图、模块图、测试矩阵和 `review-issues`
+   先把需求文档转成测试总览图、模块图（含测试矩阵）和 `review-issues`
 2. 测试用例评审通过后再用：
    - `api-test-creator`
    - `ui-test-creator`
-   - `load-test-creator`
+   - `performance-test-creator`
 
 默认输出路径：
 
@@ -114,7 +114,7 @@ skills/<skill-name>/
 ├── test_cases/
 ├── api_tests/
 ├── ui_tests/
-└── load_tests/
+└── performance_tests/
 ```
 
 ## 校验
@@ -123,7 +123,7 @@ skills/<skill-name>/
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/test-case-creator
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/api-test-creator
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/ui-test-creator
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/load-test-creator
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/performance-test-creator
 ```
 
 ## 仓库不包含什么

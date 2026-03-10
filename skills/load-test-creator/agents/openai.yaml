@@ -1,4 +1,0 @@
-interface:
-  display_name: "Load Test Creator"
-  short_description: "Create k6 load test plans and scenarios"
-  default_prompt: "Use $load-test-creator to generate k6 load, stress, spike, and soak test assets from these reviewed test cases and performance targets."

@@ -5,7 +5,7 @@ description: Generate API acceptance assets from reviewed test cases and OpenAPI
 
 # API Test Creator
 
-将已评审通过的测试用例转换成 API 验收测试资产。默认输出 Hurl 主回归脚本和 Schemathesis 边界测试计划，不负责 UI 验收，也不替代负载测试。
+将已评审通过的测试用例转换成 API 验收测试资产。默认输出 Hurl 主回归脚本和 Schemathesis 边界测试计划，不负责 UI 验收，也不替代性能测试。
 
 ## Dependency
 
