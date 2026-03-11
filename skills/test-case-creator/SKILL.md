@@ -1,11 +1,11 @@
 ---
 name: test-case-creator
-description: Design review-ready test case overview maps, module maps, and matrices from requirements documents. Use when Codex needs to analyze a PRD or specification, decompose modules/scenarios/cases, flag clarification gaps or contradictory requirements, prepare test review materials, or produce modular Mermaid/Markdown assets before API, UI, or performance test generation.
+description: "TestFoundry Stage 1 - Requirements Review: turn PRD/spec inputs into review-ready test maps, module matrices, and clarification issues. Use when Codex needs structured test review assets before API, UI, or performance asset generation."
 ---
 
 # Test Case Creator
 
-将需求文档转换成评审可用的测试用例资产。默认先完成需求理解、覆盖拆解、问题标注和评审材料整理，不要直接生成 API、UI 或性能测试脚本。
+作为 TestFoundry Stage 1，该 skill 将需求文档转换成评审可用的测试用例资产。默认先完成需求理解、覆盖拆解、问题标注和评审材料整理，不要直接生成 API、UI 或性能测试脚本。
 
 ## Dependency
 
@@ -16,7 +16,7 @@ description: Design review-ready test case overview maps, module maps, and matri
 ## Workflow
 
 1. 阅读需求文档，先建立功能、角色、状态、异常、边界五类覆盖视角。
-2. 先产出 1 张总览 Mermaid，再按业务模块拆成 5 到 6 张模块 Mermaid；模块较少时按实际数量输出，模块较多时按业务域继续拆分。
+2. 先产出 1 张总览 Mermaid，再按业务模块拆成若干张模块 Mermaid；模块数量由需求实际结构决定，模块较少时按实际数量输出，模块较大时继续按二级业务域拆分。
 3. 将需求中的待澄清项、矛盾项、依赖前提单独列出，不要混入正常用例节点。
 4. 产出 Mermaid/Markdown 总览图、模块图（每个模块文档内自带测试矩阵）和评审问题清单。
 5. 给出评审建议，明确哪些内容已满足进入 API/UI/Performance 生成阶段，哪些内容仍需补充。
@@ -41,8 +41,8 @@ description: Design review-ready test case overview maps, module maps, and matri
 
 - `mindmap.md`
   使用 `assets/mindmap-template.md`，输出 1 张总览 Mermaid、模块拆分索引、覆盖概览、评审结论。
-- `module-01-<slug>.md` 到 `module-06-<slug>.md`
-  使用 `assets/module-map-template.md`，每个文件只覆盖一个业务模块，输出模块级 Mermaid 图、场景覆盖说明、关键前置条件，以及该模块的测试矩阵表。
+- `module-{nn}-<module_slug>.md`
+  使用 `assets/module-map-template.md`，按实际模块数量连续编号输出；每个文件只覆盖一个业务模块，文档标题直接使用真实模块名称，输出模块级 Mermaid 图、场景覆盖说明、关键前置条件，以及该模块的测试矩阵表。
 - `review-issues.md`
   使用 `assets/review-issues-template.md`，输出待澄清项、矛盾项、评审动作。
 
@@ -60,6 +60,7 @@ description: Design review-ready test case overview maps, module maps, and matri
 ## Coverage Rules
 
 - 优先按用户价值和业务主路径拆模块，不先按接口或页面拆。
+- 模块标题必须使用真实业务模块名称，例如“订单创建”“审批流配置”，不要写成泛化标题如“模块测试图”。
 - 每个场景至少检查：
   - 入口条件
   - 角色差异

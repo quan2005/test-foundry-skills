@@ -1,11 +1,11 @@
 ---
 name: performance-test-creator
-description: Create k6 performance test plans and starter scenarios from reviewed test cases, interface details, and explicit performance targets. Use when Codex needs load, stress, spike, and soak assets, threshold recommendations, or performance gap analysis before running API capacity tests.
+description: "TestFoundry Stage 2 - Performance Assets: turn reviewed test cases, interface details, and explicit performance targets into k6 performance plans, scenario skeletons, and threshold gap notes. Use when Codex needs performance assets after test-case review is approved."
 ---
 
 # Performance Test Creator
 
-将已评审通过的测试用例转换成 k6 性能测试资产。默认输出性能测试方案和脚本骨架，重点补齐负载模型、阈值和性能目标缺口，不负责接口功能正确性本身。
+作为 TestFoundry Stage 2 的性能资产生成器，该 skill 将已评审通过的测试用例转换成 k6 性能测试资产。默认输出性能测试方案和脚本骨架，重点补齐负载模型、阈值和性能目标缺口，不负责接口功能正确性本身。
 
 ## Dependency
 

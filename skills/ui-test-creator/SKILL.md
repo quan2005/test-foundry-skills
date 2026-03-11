@@ -1,11 +1,11 @@
 ---
 name: ui-test-creator
-description: Create Midscene-based UI automation assets from reviewed test cases and live pages. Use when Codex needs to read a requirements document, approved test cases, and a website URL, then generate Midscene functional cases plus human-like visual and layout review notes based on the requirements and the current UI.
+description: "TestFoundry Stage 2 - UI Assets: turn reviewed test cases and live website URL/current pages into Midscene functional cases and visual/layout review notes. Use when Codex needs UI automation and UI review assets after test-case review is approved."
 ---
 
 # UI Test Creator
 
-将已评审通过的测试用例转换成 Midscene 可消费的 UI 自动化资产。默认输出双层结果：功能路径用例，以及更像人工评审的视觉风格与布局验收清单。
+作为 TestFoundry Stage 2 的 UI 资产生成器，该 skill 将已评审通过的测试用例转换成 Midscene 可消费的 UI 自动化资产。默认输出双层结果：功能路径用例，以及更像人工评审的视觉风格与布局验收清单。
 
 ## Dependency
 

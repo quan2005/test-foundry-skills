@@ -1,4 +1,4 @@
 interface:
-  display_name: "UI Test Creator"
-  short_description: "Create Midscene UI cases and visual reviews"
-  default_prompt: "Use $ui-test-creator to generate Midscene functional cases and visual layout review notes from these reviewed test cases and website pages."
+  display_name: "TestFoundry / Stage 2 / UI"
+  short_description: "Turn reviewed cases into Midscene UI reviews"
+  default_prompt: "Use $ui-test-creator to generate Midscene cases and visual layout review notes from these reviewed test cases and current website pages."

@@ -1,11 +1,11 @@
 ---
 name: api-test-creator
-description: Generate API acceptance assets from reviewed test cases and OpenAPI or Swagger inputs. Use when Codex needs to turn a requirements document, approved test cases, and swagger.json into Hurl smoke/regression scripts, Schemathesis boundary plans, and API coverage or gap notes.
+description: "TestFoundry Stage 2 - API Assets: turn reviewed test cases and OpenAPI/Swagger inputs into Hurl smoke/regression scripts, Schemathesis boundary plans, and API gap notes. Use when Codex needs API acceptance assets after test-case review is approved."
 ---
 
 # API Test Creator
 
-将已评审通过的测试用例转换成 API 验收测试资产。默认输出 Hurl 主回归脚本和 Schemathesis 边界测试计划，不负责 UI 验收，也不替代性能测试。
+作为 TestFoundry Stage 2 的 API 资产生成器，该 skill 将已评审通过的测试用例转换成 API 验收测试资产。默认输出 Hurl 主回归脚本和 Schemathesis 边界测试计划，不负责 UI 验收，也不替代性能测试。
 
 ## Dependency
 

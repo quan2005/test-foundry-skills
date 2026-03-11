@@ -1,4 +1,4 @@
 interface:
-  display_name: "Test Case Creator"
-  short_description: "Design review-ready overview maps, module maps, and test matrices"
-  default_prompt: "Use $test-case-creator to turn this requirements document into a review-ready test pack with one overview Mermaid, several module-level Mermaid maps, a test matrix, and explicit clarification gaps and contradictions."
+  display_name: "TestFoundry / Stage 1 / Test Cases"
+  short_description: "Review PRDs into test maps and matrices"
+  default_prompt: "Use $test-case-creator to generate review-ready test maps, matrices, and clarification issues from this PRD or specification."
