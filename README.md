@@ -132,7 +132,7 @@ skills/<skill-name>/
 默认输出路径：
 
 ```text
-./test/{yyMMdd}_{requirement_slug}/
+./tests/{yyMMdd}_{requirement_slug}/
 ├── test_cases/
 ├── api_tests/
 ├── ui_tests/

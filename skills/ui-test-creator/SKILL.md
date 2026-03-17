@@ -32,14 +32,14 @@ description: "TestFoundry Stage 2 - UI Assets: turn reviewed test cases and live
 
 ## Output Contract
 
-默认输出到 `./test/{yyMMdd}_{requirement_slug}/ui_tests/`。
+默认输出到 `./tests/{yyMMdd}_{requirement_slug}/ui_tests/`。
 
 - `yyMMdd`
   使用当前本地日期，例如 `260309`
 - `requirement_slug`
   优先复用 `test-case-creator` 已使用的需求标识；没有现成标识时，从需求标题、版本短名或用户给定标识生成小写 snake_case
 - 示例
-  `./test/260309_sandbox_v2_1/ui_tests/`
+  `./tests/260309_sandbox_v2_1/ui_tests/`
 
 - `midscene-functional-cases.md`
   Midscene 自然语言步骤，聚焦关键用户路径和关键页面状态。

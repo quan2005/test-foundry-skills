@@ -30,14 +30,14 @@ description: "TestFoundry Stage 1 - Requirements Review: turn PRD/spec inputs in
 
 ## Output Contract
 
-默认输出到 `./test/{yyMMdd}_{requirement_slug}/test_cases/`。
+默认输出到 `./tests/{yyMMdd}_{requirement_slug}/test_cases/`。
 
 - `yyMMdd`
   使用当前本地日期，例如 `260309`
 - `requirement_slug`
   从需求标题、版本短名或用户给定标识生成，统一转成小写 snake_case，例如 `sandbox_v2_1`
 - 示例
-  `./test/260309_sandbox_v2_1/test_cases/`
+  `./tests/260309_sandbox_v2_1/test_cases/`
 
 - `mindmap.md`
   使用 `assets/mindmap-template.md`，输出 1 张总览 Mermaid、模块拆分索引、覆盖概览、评审结论。

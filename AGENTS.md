@@ -24,7 +24,7 @@ There is no compiled build. Use the helper scripts directly:
 
 ## Coding Style & Naming Conventions
 
-Use Python 3 with 4-space indentation, type hints, and `pathlib` for filesystem work. Shell scripts should remain POSIX-friendly Bash with `set -euo pipefail`. Keep Markdown concise and operational. Name skill directories in kebab-case, and keep template/reference filenames lowercase with hyphens. Follow existing output naming such as `test/{yyMMdd}_{requirement_slug}/`.
+Use Python 3 with 4-space indentation, type hints, and `pathlib` for filesystem work. Shell scripts should remain POSIX-friendly Bash with `set -euo pipefail`. Keep Markdown concise and operational. Name skill directories in kebab-case, and keep template/reference filenames lowercase with hyphens. Follow existing output naming such as `tests/{yyMMdd}_{requirement_slug}/`.
 
 ## Testing Guidelines
 

@@ -31,14 +31,14 @@ description: "TestFoundry Stage 2 - Performance Assets: turn reviewed test cases
 
 ## Output Contract
 
-默认输出到 `./test/{yyMMdd}_{requirement_slug}/performance_tests/`。
+默认输出到 `./tests/{yyMMdd}_{requirement_slug}/performance_tests/`。
 
 - `yyMMdd`
   使用当前本地日期，例如 `260309`
 - `requirement_slug`
   优先复用 `test-case-creator` 已使用的需求标识；没有现成标识时，从需求标题、版本短名或用户给定标识生成小写 snake_case
 - 示例
-  `./test/260309_sandbox_v2_1/performance_tests/`
+  `./tests/260309_sandbox_v2_1/performance_tests/`
 
 - `k6-plan.md`
   说明性能测试目标、场景选择、数据准备、阈值建议、缺口项。
